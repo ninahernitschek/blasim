@@ -13,7 +13,7 @@ $\sigma^2_{LSST} = \sigma^2_{sys}+\sigma^2_{rand}$
 
 where $\sigma_{sys} = 0.005$ is the systematic error due to imperfect modeling of a point source, and 
 
-$\sigma_{rand} = (1/25 - \gamma)*X + \gamma*X^2$
+$\sigma_{rand} = (1/25 - \gamma)*X + \gamma *X^2$
 
 is the photometric error where $X = 10^{0.4*(m-m_5)}$,
 

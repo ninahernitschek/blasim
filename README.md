@@ -1,8 +1,4 @@
-# blasim
-A software to simulate RR Lyrae light curves undergoing the Blazhko effect.
-
-
-BlaSim
+# BlaSim
 
 A software to simulate RR Lyrae light curves undergoing the Blazhko effect.
 
@@ -13,19 +9,19 @@ To simulate light curves from the LSST survey, the light curves are calculated o
 
 Photometric uncertainties are calculated according to the photometric error model of LSST (Ivezic et al. 2019)
 
-$sigma^2_{LSST} = sigma^2_{sys}+sigma^2_{rand}$
+$\sigma^2_{LSST} = \sigma^2_{sys}+\sigma^2_{rand}$
 
-where $sigma_{sys} = 0.005$ is the systematic error due to imperfect modeling of a point source, and 
+where $\sigma_{sys} = 0.005$ is the systematic error due to imperfect modeling of a point source, and 
 
-$sigma_{rand} = (1/25 - gamma)*X + gamma*X^2$
+$\sigma_{rand} = (1/25 - \gamma)*X + \gamma*X^2$
 
 is the photometric error where $X = 10^{0.4*(m-m_5)}$,
 
-with m_5, gamma are band-specific parameters (see Ivezic et al. 2019 Table 2).
+with $m_5$, $\gamma$ are band-specific parameters (see Ivezic et al. 2019 Table 2).
 
 Finally, the observed light curve is obtained as
 
-y_i = l_i + G(0,sigma_{LSST}(l_i))
+$y_i = l_i + G(0,\sigma_{LSST}(l_i))$
 
 where l is the simulated light curve without uncertainties.
 

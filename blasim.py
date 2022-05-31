@@ -643,8 +643,8 @@ def main():
 			ax2.invert_yaxis() 
 			
 			
-			
-			shorter_baseline = (observation_baseline<observation_baseline[0]+50)
+			length=20
+			shorter_baseline = (observation_baseline<observation_baseline[0]+length)
 			
 			ax2.plot(observation_baseline[shorter_baseline], lc_freqmod_ampmod_u[shorter_baseline], 'b-', alpha =0.4, label='u')
 			ax2.plot(observation_baseline[shorter_baseline], lc_freqmod_ampmod_g[shorter_baseline], 'g-', alpha =0.4, label='g')
@@ -653,22 +653,21 @@ def main():
 			ax2.plot(observation_baseline[shorter_baseline], lc_freqmod_ampmod_z[shorter_baseline], 'k-', alpha =0.4, label='z')
 			
 			
-			good = (cadence_u<cadence_u[0]+50)
-			
+
 			if(len(cadence_u)>0):
-				ax2.scatter(cadence_u[cadence_u<cadence_u[0]+50], obs_freqmod_ampmod_u_with_err[cadence_u<cadence_u[0]+50], color='b',label='u')
+				ax2.scatter(cadence_u[cadence_u<np.max(shorter_baseline)], obs_freqmod_ampmod_u_with_err[cadence_u<np.max(shorter_baseline)], color='b',label='u')
 				
 			if(len(cadence_g)>0):
-				ax2.scatter(cadence_g[cadence_g<cadence_g[0]+50], obs_freqmod_ampmod_g_with_err[cadence_g<cadence_g[0]+50], color='g',label='g')
+				ax2.scatter(cadence_g[cadence_g<np.max(shorter_baseline)], obs_freqmod_ampmod_g_with_err[cadence_g<np.max(shorter_baseline)], color='g',label='g')
 							
 			if(len(cadence_r)>0):
-				ax2.scatter(cadence_r[cadence_r<cadence_r[0]+50], obs_freqmod_ampmod_r_with_err[cadence_r<cadence_r[0]+50], color='r',label='r')
+				ax2.scatter(cadence_r[cadence_r<np.max(shorter_baseline)], obs_freqmod_ampmod_r_with_err[cadence_r<np.max(shorter_baseline)], color='r',label='r')
 			
 			if(len(cadence_i)>0):
-				ax2.scatter(cadence_i[cadence_i<cadence_i[0]+50], obs_freqmod_ampmod_i_with_err[cadence_i<cadence_i[0]+50], color='y',label='i')
+				ax2.scatter(cadence_i[cadence_i<np.max(shorter_baseline)], obs_freqmod_ampmod_i_with_err[cadence_i<np.max(shorter_baseline)], color='y',label='i')
 				
 			if(len(cadence_z)>0):
-				ax2.scatter(cadence_z[cadence_z<cadence_z[0]+50], obs_freqmod_ampmod_z_with_err[cadence_z<cadence_z[0]+50], color='k',label='z')
+				ax2.scatter(cadence_z[cadence_z<np.max(shorter_baseline)], obs_freqmod_ampmod_z_with_err[cadence_z<np.max(shorter_baseline)], color='k',label='z')
 							
 		
 			ax1.set_xlim([np.min(observation_baseline)-20,np.max(observation_baseline)+20])

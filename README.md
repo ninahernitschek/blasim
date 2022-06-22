@@ -17,7 +17,8 @@ $\sigma_{rand} = (1/25 - \gamma)*X + \gamma *X^2$
 
 is the photometric error where $X = 10^{0.4*(m-m_5)}$,
 
-with $m_5$ and $\gamma$ being band-specific parameters (see Ivezic et al. 2019 Table 2).
+with $m_5$ and
+$\gamma$ being band-specific parameters (see Ivezic et al. 2019 Table 2).
 
 Finally, the observed light curve is obtained as
 
